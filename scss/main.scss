@@ -1,0 +1,138 @@
+// resets
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #1e1e1e;
+}
+
+html{
+    color: #fff;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Cabin';
+    font-weight: 100;
+    font-size: 16px;
+}
+
+// home page
+
+.cont{
+    margin: 5rem 0;
+
+    &__header{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5rem;
+
+        &-h1{
+            font-size: 3rem;
+        }
+    }
+
+    &__first{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        &-p{
+            font-size: 2rem;
+            margin-bottom: 5rem;
+            margin: 0 5rem;
+            text-align: center;
+        }
+
+        &__view{
+            display: flex;
+            justify-content: center;
+            margin-top: 5rem;
+            gap: 5rem;
+
+            &-sketch{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+
+                &-p{
+                    padding: .6rem 1.2rem;
+                    border-radius: .8rem;
+                    box-shadow: .2rem .2rem .8rem #000000, -.2rem -.2rem .5rem #3f3f3f;
+                    -webkit-border-radius: .8rem;
+                    -moz-border-radius: .8rem;
+                    -ms-border-radius: .8rem;
+                    -o-border-radius: .8rem;
+                }
+            }
+            // &-imgs{
+            //     display: flex;
+            //     flex-direction: column;
+            //     align-items: center;
+            //     gap: 2rem;
+            // }
+        }
+
+        // &__imgs-img{
+        //     max-width: 400px;
+        //     height: auto;
+        // }
+
+        // &-sketch{
+        //     width: 600px;
+        // }
+
+        // &-mockup{
+        //     max-width: 600px;
+        // }
+    }
+    
+    // mockup
+
+    &__second{
+        @extend .cont__first;
+
+        &-p{
+            margin-top: 5rem;
+            @extend .cont__first-p;
+        }
+
+        &__view{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            
+            &-type{
+                display: flex;
+                flex-direction: column;
+                align-items: center
+            }
+
+            &-p{
+                @extend .cont__first__view-sketch-p;
+                width: fit-content;
+                font-size: 1.5rem;
+                margin: 3rem 0;
+            }
+
+            &-mockup{
+                display: flex;
+
+                &-item{
+
+                    &:last-child{
+                        margin-left: 4rem;
+                    }
+
+                    &-img{
+                        max-width: 435px;
+                    }
+                }
+            }
+        }
+    }
+}
