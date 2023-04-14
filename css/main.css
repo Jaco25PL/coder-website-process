@@ -45,13 +45,13 @@ html {
   -ms-border-radius: 0.3rem;
   -o-border-radius: 0.3rem;
 }
-.cont__first, .cont__second {
+.cont__first, .cont__fourth, .cont__second {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.cont__first-p, .cont__third__text-p-bottom, .cont__third__text-p, .cont__second-p {
+.cont__first-p, .cont__third__text-p-bottom, .cont__third__text-p, .cont__second-p, .cont__fourth-p {
   font-size: 2rem;
   margin-bottom: 5rem;
   margin: 0 5rem;
@@ -70,7 +70,7 @@ html {
   flex-direction: column;
   gap: 2rem;
 }
-.cont__first__view-sketch-p, .cont__second__view-p, .cont__third__view-p {
+.cont__first__view-sketch-p, .cont__second__view-p, .cont__fourth__view-p, .cont__third__view-p {
   font-size: 1.5rem;
   padding: 0.6rem 1.2rem;
   border-radius: 0.8rem;
@@ -80,11 +80,11 @@ html {
   -ms-border-radius: 0.8rem;
   -o-border-radius: 0.8rem;
 }
-.cont__second-p {
+.cont__second-p, .cont__fourth-p {
   margin-top: 5rem;
   position: relative;
 }
-.cont__second-p::after {
+.cont__second-p::after, .cont__fourth-p::after {
   content: "";
   position: absolute;
   height: 0.3rem;
@@ -109,7 +109,7 @@ html {
   align-items: center;
   flex-direction: column;
 }
-.cont__second__view-p, .cont__third__view-p {
+.cont__second__view-p, .cont__fourth__view-p, .cont__third__view-p {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,9 +130,10 @@ html {
   gap: 1rem;
 }
 .cont__second__view-mockup-item span, .cont__third__view-webpage-nav span, .cont__third__view-webpage span {
+  font-size: 1.2rem;
   padding: 0.5rem 0.8rem;
   border-radius: 0.8rem;
-  color: #e1dae6;
+  color: #fff;
   font-weight: 600;
   background: linear-gradient(330deg, #5b0eeb 0%, #6d5dfc 50%, #8abdff 100%);
   box-shadow: 0.2rem 0.2rem 0.8rem #000000, -0.2rem -0.2rem 0.5rem #3f3f3f;
@@ -201,7 +202,11 @@ html {
 .cont__third__view-img-nav {
   max-width: 90vw;
 }
-
+.cont__fourth__view-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .wireframe__img-mobile {
   width: 14.75rem;
   height: auto;
