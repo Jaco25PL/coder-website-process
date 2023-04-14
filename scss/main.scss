@@ -1,5 +1,20 @@
-// resets
+// utilities
+    // vars-colors
+    $main-color: #1e1e1e;
+    $background-uwu: linear-gradient(330deg, #5b0eeb 0%, #6d5dfc 50%, #8abdff 100%);
 
+    // vars-shadow
+    $shadow: .2rem .2rem .8rem #000000, -.2rem -.2rem .5rem #3f3f3f;
+
+    // mixin-d-flex
+    @mixin d-flex($direction){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: $direction;
+    }
+
+// resets
 *{
     box-sizing: border-box;
     margin: 0;
@@ -7,7 +22,7 @@
 }
 
 body{
-    background-color: #1e1e1e;
+    background-color: $main-color;
 }
 
 html{
@@ -25,20 +40,32 @@ html{
     margin: 5rem 0;
 
     &__header{
-        display: flex;
-        justify-content: center;
+        @include d-flex(column);
         margin-bottom: 5rem;
 
         &-h1{
-            font-size: 3rem;
+            font-family: 'Amatic SC', Cabin;
+            font-size: 5rem;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                height: .3rem;
+                width: 100%;
+                display: block;
+                background: $background-uwu;
+                border-radius: .3rem;
+                -webkit-border-radius: .3rem;
+                -moz-border-radius: .3rem;
+                -ms-border-radius: .3rem;
+                -o-border-radius: .3rem;
+            }
         }
     }
 
+//sketch section 
     &__first{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        @include d-flex(column);
 
         &-p{
             font-size: 2rem;
@@ -54,44 +81,24 @@ html{
             gap: 5rem;
 
             &-sketch{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                @include d-flex(column);
                 gap: 2rem;
 
                 &-p{
+                    font-size: 1.5rem;
                     padding: .6rem 1.2rem;
                     border-radius: .8rem;
-                    box-shadow: .2rem .2rem .8rem #000000, -.2rem -.2rem .5rem #3f3f3f;
+                    box-shadow: $shadow;
                     -webkit-border-radius: .8rem;
                     -moz-border-radius: .8rem;
                     -ms-border-radius: .8rem;
                     -o-border-radius: .8rem;
                 }
             }
-            // &-imgs{
-            //     display: flex;
-            //     flex-direction: column;
-            //     align-items: center;
-            //     gap: 2rem;
-            // }
         }
-
-        // &__imgs-img{
-        //     max-width: 400px;
-        //     height: auto;
-        // }
-
-        // &-sketch{
-        //     width: 600px;
-        // }
-
-        // &-mockup{
-        //     max-width: 600px;
-        // }
     }
     
-    // mockup
+// wireframe section
 
     &__second{
         @extend .cont__first;
@@ -99,6 +106,21 @@ html{
         &-p{
             margin-top: 5rem;
             @extend .cont__first-p;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                height: .3rem;
+                width: 100%;
+                left: 0;
+                top: -2rem;
+                background: $background-uwu;
+                border-radius: .3rem;
+                -webkit-border-radius: .3rem;
+                -moz-border-radius: .3rem;
+                -ms-border-radius: .3rem;
+                -o-border-radius: .3rem;
+            }
         }
 
         &__view{
@@ -107,25 +129,35 @@ html{
             width: 100%;
             
             &-type{
-                display: flex;
-                flex-direction: column;
-                align-items: center
+                @include d-flex(column);
             }
 
             &-p{
+                @include d-flex(column);
                 @extend .cont__first__view-sketch-p;
                 width: fit-content;
-                font-size: 1.5rem;
                 margin: 3rem 0;
             }
 
             &-mockup{
                 display: flex;
+                gap: 2rem;
 
                 &-item{
-
-                    &:last-child{
-                        margin-left: 4rem;
+                    @include d-flex(column);
+                    justify-content: start;
+                    gap: 1rem;
+                    & span{
+                        padding: .5rem .8rem;
+                        border-radius: .8rem;
+                        color: #e1dae6;
+                        font-weight: 600;
+                        background: $background-uwu;
+                        box-shadow: $shadow;
+                        -webkit-border-radius: .8rem;
+                        -moz-border-radius: .8rem;
+                        -ms-border-radius: .8rem;
+                        -o-border-radius: .8rem;
                     }
 
                     &-img{
@@ -135,4 +167,82 @@ html{
             }
         }
     }
+
+    // web process
+    &__third{
+        margin-top: 5rem;
+        @include d-flex(column);
+
+        &__text{
+            position: relative;
+            @include d-flex(column);
+            gap: 2rem;
+            margin: 0 5rem;
+
+            &::after{
+                content: "";
+                position: absolute;
+                height: .3rem;
+                width: 100%;
+                left: 0;
+                top: -2rem;
+                background: $background-uwu;
+                border-radius: .3rem;
+                -webkit-border-radius: .3rem;
+                -moz-border-radius: .3rem;
+                -ms-border-radius: .3rem;
+                -o-border-radius: .3rem;
+            }
+
+            &-p{
+                @extend .cont__first-p;
+
+                &-bottom{
+                    @extend .cont__first-p;
+                    margin: 3rem 5rem;
+                }
+            }
+        }
+
+        &__view{
+            @include d-flex(column);
+
+            &-p{
+                @extend .cont__second__view-p;
+            }
+
+            &-web{
+                display: flex;
+                gap: 2rem;
+
+                &page{
+                    @extend .cont__second__view-mockup-item;
+
+                    &-nav{
+                        @extend .cont__second__view-mockup-item;
+                        align-items: start;
+                    }
+                }
+
+                &-nav{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3rem;
+                }
+            }
+
+            &-img{
+                max-width: 435px;
+
+                &-nav{
+                    max-width: 90vw;
+                }
+            }
+        }
+    }
+}
+
+.wireframe__img-mobile{
+    width: 14.75rem;
+    height: auto;
 }
