@@ -386,6 +386,26 @@ html{
 }
 
 
+// copyright
+.footer{
+    @include d-flex(column);
+    
+    &__copyright{
+        letter-spacing: 5px;
+        font-size: 1.2rem;
+        font-family: 'Amatic SC', Cabin;
+        box-shadow: inset .2rem .2rem .8rem #000000,inset -.2rem -.2rem .5rem #3f3f3f;
+        border-radius: .6rem;
+        padding: 1rem 1.4rem;
+        -webkit-border-radius: .6rem;
+        -moz-border-radius: .6rem;
+        -ms-border-radius: .6rem;
+        -o-border-radius: .6rem;
+}
+}
+
+
+
 @media screen and (max-width:1300px) {
     html{
         font-size: 13px;
