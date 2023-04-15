@@ -1,7 +1,9 @@
 // utilities
     // vars-colors
     $main-color: #1e1e1e;
-    $background-uwu: linear-gradient(330deg, #5b0eeb 0%, #6d5dfc 50%, #8abdff 100%);
+    $background-uwu: linear-gradient(330deg, #5b0eeb , #6d5dfc, #8abdff);
+    $background-uwu-2: linear-gradient(330deg, #272727dc, #4e4e4ecb , #aaaaaab6);
+
 
     // vars-shadow
     $shadow: .2rem .2rem .8rem #000000, -.2rem -.2rem .5rem #3f3f3f;
@@ -13,6 +15,13 @@
         align-items: center;
         flex-direction: $direction;
     }
+
+    // key-frame
+    @keyframes progress {
+        0% { background-position: 0 0; }
+        100% { background-position: 200% 0; }
+    }
+
 
 // resets
 *{
@@ -147,11 +156,11 @@ html{
                     @include d-flex(column);
                     justify-content: start;
                     gap: 1rem;
+
                     & span{
                         font-size: 1.2rem;
                         padding: .5rem .8rem;
                         border-radius: .8rem;
-                        // color: #e1dae6;
                         color: #fff;
                         font-weight: 600;
                         background: $background-uwu;
@@ -261,11 +270,147 @@ html{
             &-p{
                 @extend .cont__second__view-p;
             }
+
+            &-mockup-list{
+                @include d-flex(column);
+            }
+
+            &-mockup{
+                @include d-flex(row);
+                align-items: start;
+                gap: 2rem;
+                margin-bottom: 5rem;
+
+                &-home{
+                    @extend .cont__second__view-mockup-item;
+                    position: relative;
+                    
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        height: 20%;
+                        background: linear-gradient( #00000000, #1e1e1e8f , $main-color);
+                    }
+
+                    &-scroll{
+                        height: 650px;
+                        overflow: hidden;
+                        overflow-y: scroll;
+                        border-radius: .2rem;
+                        -webkit-border-radius: .2rem;
+                        -moz-border-radius: .2rem;
+                        -ms-border-radius: .2rem;
+                        -o-border-radius: .2rem;
+                    }
+
+                    &-img{
+                        width: 700px;
+                        height: auto;
+                    }
+                }
+            }
         }
+
+        &__text{
+            @extend .cont__third__text;
+
+            &::after{
+                background: $background-uwu-2;
+            }
+
+            &-p-bottom{
+                @extend .cont__first-p;
+            }
+        }
+
+        &-deco{
+            position: relative;
+            width: 5px;
+            height: 30rem;
+            border-radius: 2.5px;
+            background: $background-uwu-2;
+            -webkit-border-radius: 2.5px;
+            -moz-border-radius: 2.5px;
+            -ms-border-radius: 2.5px;
+            -o-border-radius: 2.5px;
+        }
+    }
+
+    &__final{
+        @include d-flex(column);
+        @extend .cont__second-p;
+        gap: 2rem;
+
+        &-text{
+            @include d-flex(column);
+            gap: 2rem;
+
+            &-span{
+                @extend .cont__first__view-sketch-p;
+            }
+        }
+    }
+
+    &__progress-bar {
+        height: 12px;
+        margin: 3rem 0 ;
+        width: 100%;
+        background: linear-gradient(to right, #840a82   , #540D6E, #37238E, #1261A0, #2A9EBB, #73D2DE, #2A9EBB, #1261A0, #37238E, #540D6E, #840a82);
+        background-size: 200% 100%;
+        animation: progress 5s linear infinite;
+        -webkit-animation: progress 5s linear infinite;
     }
 }
 
 .wireframe__img-mobile{
     width: 14.75rem;
     height: auto;
+}
+
+.compare-mobile::before{
+    background: none;
+}
+
+.scroll-mobile{
+    height: 700px;
+}
+
+.fourth__mobile-img{
+    width: 300px;
+}
+
+.non-scroll-img{
+    margin-right: 16.8px;
+}
+
+
+@media screen and (max-width:1300px) {
+    html{
+        font-size: 13px;
+   }
+
+   img{
+    width: 90%;
+   }
+
+   .cont__second__view-mockup{
+    gap: .5rem;
+    }
+
+
+   .cont__fourth-deco{
+    display: none;
+   }
+
+   .cont__fourth__view-mockup{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   }
+
+   .cont__fourth__view-mockup-home-img{
+    max-width: 450px;
+   }
+
 }
