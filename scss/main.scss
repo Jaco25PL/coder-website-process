@@ -1,47 +1,7 @@
-// utilities
-    // vars-colors
-    $main-color: #1e1e1e;
-    $background-uwu: linear-gradient(330deg, #5b0eeb , #6d5dfc, #8abdff);
-    $background-uwu-2: linear-gradient(330deg, #272727dc, #4e4e4ecb , #aaaaaab6);
-
-
-    // vars-shadow
-    $shadow: .2rem .2rem .8rem #000000, -.2rem -.2rem .5rem #3f3f3f;
-
-    // mixin-d-flex
-    @mixin d-flex($direction){
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: $direction;
-    }
-
-    // key-frame
-    @keyframes progress {
-        0% { background-position: 0 0; }
-        100% { background-position: 200% 0; }
-    }
-
-
-// resets
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body{
-    background-color: $main-color;
-}
-
-html{
-    color: #fff;
-    list-style-type: none;
-    text-decoration: none;
-    font-family: 'Cabin';
-    font-weight: 100;
-    font-size: 16px;
-}
+@import 'utilities/vars';
+@import 'utilities/mixins';
+@import 'utilities/keyframes';
+@import 'reset/reset';
 
 // home page
 
@@ -401,7 +361,7 @@ html{
         -moz-border-radius: .6rem;
         -ms-border-radius: .6rem;
         -o-border-radius: .6rem;
-}
+    }
 }
 
 
