@@ -5,6 +5,15 @@
 
 // home page
 
+
+// *{
+//     border: 2px tomato solid;
+// }
+// html{
+//     border: none;
+// }
+
+
 .cont{
     margin: 5rem 0;
 
@@ -206,7 +215,8 @@
                 max-width: 435px;
 
                 &-nav{
-                    max-width: 90vw;
+                    max-width: 1300px;
+                    height: auto
                 }
             }
         }
